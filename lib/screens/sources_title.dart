@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
+import 'package:news/screens/news_item.dart';
 import 'package:news/screens/source-item.dart';
 import 'package:news/shared/network/remote/api_manager.dart';
 
@@ -45,7 +46,7 @@ class _SourcesTitleState extends State<SourcesTitle> {
             var articles = snapshot.data?.articles ?? [];
             return ListView.builder(
               itemBuilder: (context, index) {
-                return Text(articles[index].title ?? "");
+                return NewsItem(articles[index]);
               },
               itemCount: articles.length,
             );
