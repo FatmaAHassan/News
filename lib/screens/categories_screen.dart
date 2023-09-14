@@ -5,6 +5,10 @@ import 'package:news/screens/category_item.dart';
 class CategoriesScreen extends StatelessWidget {
   var categories = CategoryModel.getCategories();
 
+  Function onCategoryColick;
+
+  CategoriesScreen(this.onCategoryColick);
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -15,7 +19,10 @@ class CategoriesScreen extends StatelessWidget {
             crossAxisCount: 2, crossAxisSpacing: 12, mainAxisSpacing: 12),
         itemBuilder: (context, index) {
           return InkWell(
-              onTap: () {}, child: CategoryItem(categories[index], index));
+              onTap: () {
+                onCategoryColick(categories[index]);
+              },
+              child: CategoryItem(categories[index], index));
         },
       ),
     );
