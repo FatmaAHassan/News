@@ -1,17 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:news/screens/source-item.dart';
+import 'package:news/screens/sources_title.dart';
 import 'package:news/shared/network/remote/api_manager.dart';
 
-class NewsScreen extends StatefulWidget {
+class NewsScreen extends StatelessWidget {
   static const String routeName = "news";
-
-  @override
-  State<NewsScreen> createState() => _NewsScreenState();
-}
-
-class _NewsScreenState extends State<NewsScreen> {
-  int currentSource = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -45,10 +38,7 @@ class _NewsScreenState extends State<NewsScreen> {
             return Center(child: Text("Somthing Went Wrong"));
           }
           var sources = snapshot.data?.sources ?? [];
-          return Column(
-            children: [
-            ],
-          );
+          return SourcesTitle(sources);
         },
       ),
     );

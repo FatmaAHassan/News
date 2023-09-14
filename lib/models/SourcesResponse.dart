@@ -1,5 +1,5 @@
 class SourcesResponse {
-  var sources;
+  // var sources;
 
   SourcesResponse({
       this.status, 
