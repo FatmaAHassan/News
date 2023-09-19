@@ -17,8 +17,8 @@ class CategoryItem extends StatelessWidget {
           borderRadius: BorderRadius.only(
             topRight: Radius.circular(25),
             topLeft: Radius.circular(25),
-            bottomRight: index.isEven ? Radius.circular(25) : Radius.zero,
-            bottomLeft: index.isOdd ? Radius.circular(25) : Radius.zero,
+            bottomRight: index.isOdd ? Radius.circular(25) : Radius.zero,
+            bottomLeft: index.isEven ? Radius.circular(25) : Radius.zero,
           )),
       child: Column(
         children: [

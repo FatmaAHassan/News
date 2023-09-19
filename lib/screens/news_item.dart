@@ -45,8 +45,10 @@ class NewsItem extends StatelessWidget {
                 articles.description ?? "",
                 style: GoogleFonts.quicksand(
                   fontSize: 12,
-                  fontWeight: FontWeight.w400,
-                  color: Color(0xFF16161a33),
+                  fontWeight: FontWeight.w300,
+                  color: Colors.black26,
+                  // color: Color(0xFF16161a33)
+                  // ,
                 ),
               ),
               Row(

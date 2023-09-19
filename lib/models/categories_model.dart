@@ -12,14 +12,14 @@ class CategoryModel {
     return [
       CategoryModel("business", "Business", "assets/imges/bussines.png",
           Color(0xffCF7E48)),
-      CategoryModel("politics", "Politics", "assets/imges/politics.png",
+      CategoryModel("politics", "Politics", "assets/imges/Politics.png",
           Color(0xff003E90)),
       CategoryModel(
           "science", "Science", "assets/imges/science.png", Color(0xffF2D352)),
       CategoryModel(
-          "sport", "Sport", "assets/imges/Sport.png", Color(0xffC91C22)),
+          "sport", "Sport", "assets/imges/sports.png", Color(0xffC91C22)),
       CategoryModel(
-          "health", "Health", "assets/imges/Health.png", Color(0xffED1E79)),
+          "health", "Health", "assets/imges/health.png", Color(0xffED1E79)),
       CategoryModel("environment", "Environment",
           "assets/imges/environment.png", Color(0xff4882CF)),
     ];
