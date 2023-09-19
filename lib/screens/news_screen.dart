@@ -5,7 +5,6 @@ import 'package:news/shared/network/remote/api_manager.dart';
 
 class NewsScreen extends StatelessWidget {
   CategoryModel categoryModel;
-
   NewsScreen(this.categoryModel);
 
   @override
@@ -17,9 +16,11 @@ class NewsScreen extends StatelessWidget {
           return Center(child: CircularProgressIndicator());
         }
         if (snapshot.hasError) {
+          print(snapshot.error);
           return Center(child: Text("Somthing Went Wrong"));
         }
         var sources = snapshot.data?.sources ?? [];
+        print(sources.length);
         return SourcesTitle(sources);
       },
     );

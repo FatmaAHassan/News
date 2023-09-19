@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:http/http.dart';
 import 'package:news/screens/news_item.dart';
 import 'package:news/screens/source-item.dart';
 import 'package:news/shared/network/remote/api_manager.dart';
+
+import '../models/SourcesResponse.dart';
 
 class SourcesTitle extends StatefulWidget {
   List<Sources> sources;
@@ -12,6 +13,7 @@ class SourcesTitle extends StatefulWidget {
   @override
   State<SourcesTitle> createState() => _SourcesTitleState();
 }
+
 class _SourcesTitleState extends State<SourcesTitle> {
   int index = 0;
 
@@ -41,14 +43,17 @@ class _SourcesTitleState extends State<SourcesTitle> {
               return Center(child: CircularProgressIndicator());
             }
             if (snapshot.hasError) {
+              print("Error ${snapshot.error}");
               return Center(child: Text("Somthing Went Wrong"));
             }
             var articles = snapshot.data?.articles ?? [];
-            return ListView.builder(
-              itemBuilder: (context, index) {
-                return NewsItem(articles[index]);
-              },
-              itemCount: articles.length,
+            return Expanded(
+              child: ListView.builder(
+                itemBuilder: (context, index) {
+                  return NewsItem(articles[index]);
+                },
+                itemCount: articles.length,
+              ),
             );
           },
         )

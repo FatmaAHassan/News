@@ -21,9 +21,8 @@ class ApiManager {
   }
 
   static Future<NewsDataModels> getNewData(String sourceId)async {
-    Uri url = Uri.https(Constants.BASE_URL, " /v2/everything", {
-
-      "apikey": Constants.API_KEY, "sources": sourceId});
+    Uri url = Uri.https(Constants.BASE_URL, "/v2/everything",
+        {"apikey": Constants.API_KEY, "sources": sourceId});
    var response =await  http.get(url);
    var jsonData=jsonDecode(response.body);
    NewsDataModels newsDataModels=NewsDataModels.fromJson(jsonData);

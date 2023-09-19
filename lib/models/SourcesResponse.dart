@@ -1,70 +1,66 @@
 class SourcesResponse {
-  // var sources;
-
   SourcesResponse({
-      this.status, 
-      this.totalResults, 
-      this.articles,});
+    this.sources,
+  });
 
   SourcesResponse.fromJson(dynamic json) {
-    status = json['status'];
-    totalResults = json['totalResults'];
-    if (json['articles'] != null) {
-      articles = [];
-      json['articles'].forEach((v) {
-        articles?.add(Articles.fromJson(v));
+    if (json['sources'] != null) {
+      sources = [];
+      json['sources'].forEach((v) {
+        sources?.add(Sources.fromJson(v));
       });
     }
   }
-  String? status;
-  int? totalResults;
-  List<Articles>? articles;
 
-}
+  List<Sources>? sources;
 
-class Articles {
-  Articles({
-      this.source, 
-      this.author, 
-      this.title, 
-      this.description, 
-      this.url, 
-      this.urlToImage, 
-      this.publishedAt, 
-      this.content,});
-
-  Articles.fromJson(dynamic json) {
-    source = json['source'] != null ? Source.fromJson(json['source']) : null;
-    author = json['author'];
-    title = json['title'];
-    description = json['description'];
-    url = json['url'];
-    urlToImage = json['urlToImage'];
-    publishedAt = json['publishedAt'];
-    content = json['content'];
+  Map<String, dynamic> toJson() {
+    final map = <String, dynamic>{};
+    if (sources != null) {
+      map['sources'] = sources?.map((v) => v.toJson()).toList();
+    }
+    return map;
   }
-  Source? source;
-  String? author;
-  String? title;
-  String? description;
-  String? url;
-  String? urlToImage;
-  String? publishedAt;
-  String? content;
-
 }
-class Source {
-  Source({
-      this.id, 
-      this.name,});
 
-  Source.fromJson(dynamic json) {
+class Sources {
+  Sources({
+    this.id,
+    this.name,
+    this.description,
+    this.url,
+    this.category,
+    this.language,
+    this.country,
+  });
+
+  Sources.fromJson(dynamic json) {
     id = json['id'];
     name = json['name'];
+    description = json['description'];
+    url = json['url'];
+    category = json['category'];
+    language = json['language'];
+    country = json['country'];
   }
-  dynamic id;
+
+  String? id;
   String? name;
+  String? description;
+  String? url;
+  String? category;
+  String? language;
+  String? country;
 
-
-
+  Map<String, dynamic> toJson() {
+    final map = <String, dynamic>{};
+    map['id'] = id;
+    map['name'] = name;
+    map['description'] = description;
+    map['url'] = url;
+    map['category'] = category;
+    map['language'] = language;
+    map['country'] = country;
+    return map;
+  }
 }
