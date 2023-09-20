@@ -1,6 +1,5 @@
 {
   "appTitle": "NewsAPP ",
-  "Settings": "settings",
-  "Categories": "Categories"
-    "language":"language"
+  "settings":"Settings",
+  "categories":"categories"
 }

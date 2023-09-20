@@ -1,6 +1,5 @@
 {
-  "appTitle ": " الاخبار",
-  "Settings": "الاعدادات",
-  "Categories": "الفئات"
-  "language":"اللغه"
+  "appTitle": "الاخبار",
+  "settings":"الاعدادات",
+  "categories":"الفئات"
 }
